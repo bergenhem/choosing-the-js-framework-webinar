@@ -1,9 +1,10 @@
-<h1>Angular App</h1>
+<h1>{{ title }}</h1>
 
-<input />
-<button />
+<input #newItem />
+<button (click)="addItem(newItem.value)">Add Item</button>
 
 <ul>
-  <li>Item 1</li>
-  <li>Item 2</li>
+  <li *ngFor="let item of listItems">
+    {{ item }}
+  </li>
 <ul>
