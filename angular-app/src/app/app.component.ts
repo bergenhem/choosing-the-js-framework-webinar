@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  title = 'Angular App';
+  listItems = ['Desks', 'Chairs', 'Coffee Cup'];
+  addItem(newItem: string) {
+    if(newItem) {
+      this.listItems.push(newItem);
+    }
+  }
+
 }
