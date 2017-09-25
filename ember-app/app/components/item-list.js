@@ -5,9 +5,11 @@ export default Ember.Component.extend({
   actions: {
     addItem(itemValue) {
       var store = this.get('store');
-      store.createRecord('item', {
-        text: itemValue
-      });
+      if(itemValue) {
+        store.createRecord('item', {
+          text: itemValue
+        });
+      }
     }
   }
 });

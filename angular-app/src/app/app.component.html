@@ -1,10 +1,12 @@
-<h1>{{ title }}</h1>
+<div id="app">
+  <h1>{{ title }}</h1>
 
-<input #newItem />
-<button (click)="addItem(newItem.value)">Add Item</button>
+  <input type="text" class="k-textbox" #newItem />
+  <button type="button" class="k-button k-primary" (click)="addItem(newItem.value)">Add Item</button>
 
-<ul>
-  <li *ngFor="let item of listItems">
-    {{ item }}
-  </li>
-<ul>
+  <ul>
+    <li *ngFor="let item of listItems">
+      {{ item.text }}
+    </li>
+  </ul>
+</div>

@@ -1,8 +1,8 @@
 <template>
   <div>
     <h1>{{ title }}</h1>
-    <input v-model="newItem" />
-    <button v-on:click="addItem">Add item</button>
+    <input type="text" class="k-textbox" v-model="newItem" />
+    <button type="button" class="k-button k-primary" v-on:click="addItem">Add item</button>
     <ul>
       <li v-for="item in listItems">
         {{ item.text }}
@@ -27,10 +27,12 @@ export default {
   },
   methods: {
     addItem() {
-      let newArray = this.listItems;
-      let newId = parseInt(newArray[newArray.length - 1].id, 10);
-      newArray.push({ id: newId + 1, text: this.newItem });
-      this.listItems = newArray;
+      if(this.newItem) {
+        let newArray = this.listItems;
+        let newId = parseInt(newArray[newArray.length - 1].id, 10);
+        newArray.push({ id: newId + 1, text: this.newItem });
+        this.listItems = newArray;
+      }
     }
   }
 }

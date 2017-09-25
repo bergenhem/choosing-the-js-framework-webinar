@@ -4,6 +4,7 @@ import './App.css';
 class App extends Component {
   constructor(props) {
    super(props);
+   this.title = 'React App';
    this.state = {
      value: '',
      listItems: [
@@ -23,17 +24,20 @@ class App extends Component {
   }
 
   addItem() {
-    let newArray = this.state.listItems;
-    let newId = parseInt(newArray[newArray.length - 1].id, 10);
-    newArray.push({ id: newId + 1, text: this.state.value });
-    this.setState({ listItems: newArray });
+    if(this.state.value) {
+      let newArray = this.state.listItems;
+      let newId = parseInt(newArray[newArray.length - 1].id, 10);
+      newArray.push({ id: newId + 1, text: this.state.value });
+      this.setState({ listItems: newArray });
+    }
   }
   render() {
     let renderedItems = this.state.listItems;
     return (
-      <div>
-        <input value={ this.state.value } onChange= { this.handleChange }/>
-        <button onClick={ this.addItem }>Add Item</button>
+      <div id="app">
+        <h1>{ this.title }</h1>
+        <input type="text" className="k-textbox" value={ this.state.value } onChange= { this.handleChange }/>
+        <button type="button" className="k-button k-primary" onClick={ this.addItem }>Add Item</button>
         <ul>
           {
             renderedItems.map((item) =>
@@ -48,22 +52,3 @@ class App extends Component {
 }
 
 export default App;
-
-// title = 'Angular App';
-// listItems = ['Desks', 'Chairs', 'Coffee Cup'];
-// addItem(newItem: string) {
-//   if(newItem) {
-//     this.listItems.push(newItem);
-//   }
-// }
-//
-// <h1>{{ title }}</h1>
-//
-// <input #newItem />
-// <button (click)="addItem(newItem.value)">Add Item</button>
-//
-// <ul>
-//   <li *ngFor="let item of listItems">
-//     {{ item }}
-//   </li>
-// <ul>

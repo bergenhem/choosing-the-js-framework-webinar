@@ -7,11 +7,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Angular App';
-  listItems = ['Desks', 'Chairs', 'Coffee Cup'];
+  listItems = [
+    { id: 0, text: 'Desks' },
+    { id: 1, text: 'Chairs' },
+    { id: 2, text: 'Coffee Cup'}
+  ];
   addItem(newItem: string) {
     if(newItem) {
-      this.listItems.push(newItem);
+      let newArray = this.listItems;
+      let newId = newArray[newArray.length - 1].id;
+      this.listItems.push({ id: newId + 1, text: newItem });
     }
   }
-
 }
