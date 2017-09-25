@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>{{ title }}</h1>
-    <input class="k-textbox" v-model="newItem" />
+    <input type="text" class="k-textbox" v-model="newItem" />
     <button type="button" class="k-button k-primary" v-on:click="addItem">Add item</button>
     <ul>
       <li v-for="item in listItems">
