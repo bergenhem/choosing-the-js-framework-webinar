@@ -1,8 +1,8 @@
 <template>
   <div>
     <h1>{{ title }}</h1>
-    <input v-model="newItem" />
-    <button type="button" v-on:click="addItem">Add item</button>
+    <input class="k-textbox" v-model="newItem" />
+    <button type="button" class="k-button k-primary" v-on:click="addItem">Add item</button>
     <ul>
       <li v-for="item in listItems">
         {{ item.text }}
