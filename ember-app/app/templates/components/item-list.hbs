@@ -1,0 +1,8 @@
+<h1>{{title}}</h1>
+{{input type="text" value=itemValue}}
+<button {{action "addItem" itemValue}}>Add item</button>
+<ul>
+  {{#each items as |item|}}
+  <li>{{ item.text }}</li>
+  {{/each}}
+</ul>
