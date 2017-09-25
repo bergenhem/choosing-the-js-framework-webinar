@@ -1,8 +1,10 @@
-<h1>{{title}}</h1>
-{{input type="text" value=itemValue}}
-<button {{action "addItem" itemValue}}>Add item</button>
-<ul>
-  {{#each items as |item|}}
-  <li>{{ item.text }}</li>
-  {{/each}}
-</ul>
+<div id="app">
+  <h1>{{title}}</h1>
+  {{input type="text" class="k-textbox" value=itemValue}}
+  <button type="button" class="k-button k-primary" {{action "addItem" itemValue}}>Add item</button>
+  <ul>
+    {{#each items as |item|}}
+    <li>{{ item.text }}</li>
+    {{/each}}
+  </ul>
+</div>
