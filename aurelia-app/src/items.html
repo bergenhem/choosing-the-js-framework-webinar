@@ -1,10 +1,10 @@
 <template>
-  <section>
+  <div id="app">
     <h1>${title}</h1>
-    <input value.two-way="itemValue" />
-    <button type="button" click.trigger="addItem()">Add item</button>
+    <input type="text" class="k-textbox" value.two-way="itemValue" />
+    <button type="button" class="k-button k-primary" click.trigger="addItem()">Add item</button>
     <ul>
       <li repeat.for="item of listItems">${item.text}</li>
     </ul>
-  </section>
+  </div>
 </template>
