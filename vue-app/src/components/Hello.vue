@@ -27,7 +27,7 @@ export default {
   },
   methods: {
     addItem() {
-      if(this.newItem !== '') {
+      if(this.newItem) {
         let newArray = this.listItems;
         let newId = parseInt(newArray[newArray.length - 1].id, 10);
         newArray.push({ id: newId + 1, text: this.newItem });

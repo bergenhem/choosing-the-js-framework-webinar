@@ -24,10 +24,12 @@ class App extends Component {
   }
 
   addItem() {
-    let newArray = this.state.listItems;
-    let newId = parseInt(newArray[newArray.length - 1].id, 10);
-    newArray.push({ id: newId + 1, text: this.state.value });
-    this.setState({ listItems: newArray });
+    if(this.state.value) {
+      let newArray = this.state.listItems;
+      let newId = parseInt(newArray[newArray.length - 1].id, 10);
+      newArray.push({ id: newId + 1, text: this.state.value });
+      this.setState({ listItems: newArray });
+    }
   }
   render() {
     let renderedItems = this.state.listItems;
