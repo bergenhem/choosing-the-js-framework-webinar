@@ -1,0 +1,10 @@
+<template>
+  <section>
+    <h1>${title}</h1>
+    <input value.two-way="itemValue" />
+    <button type="button" click.trigger="addItem()">Add item</button>
+    <ul>
+      <li repeat.for="item of listItems">${item.text}</li>
+    </ul>
+  </section>
+</template>
